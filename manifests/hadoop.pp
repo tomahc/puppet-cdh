@@ -168,6 +168,7 @@ class cdh::hadoop(
     $yarn_scheduler_maximum_allocation_mb        = $::cdh::hadoop::defaults::yarn_scheduler_maximum_allocation_mb,
     $yarn_scheduler_minimum_allocation_vcores    = $::cdh::hadoop::defaults::yarn_scheduler_minimum_allocation_vcores,
     $yarn_scheduler_maximum_allocation_vcores    = $::cdh::hadoop::defaults::yarn_scheduler_maximum_allocation_vcores,
+    $yarn_nodemanager_remote_app_log_dir         = $::cdh::hadoop::defaults::yarn_nodemanager_remote_app_log_dir,
     $hadoop_heapsize                             = $::cdh::hadoop::defaults::hadoop_heapsize,
     $hadoop_namenode_opts                        = $::cdh::hadoop::defaults::hadoop_namenode_opts,
     $yarn_heapsize                               = $::cdh::hadoop::defaults::yarn_heapsize,
