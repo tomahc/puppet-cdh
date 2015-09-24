@@ -24,6 +24,7 @@ class cdh::hadoop::defaults {
     $mapreduce_system_dir                     = undef
     $io_file_buffer_size                      = undef
 
+    $mapreduce_jobhistory_webapp_addr         = '0.0.0.0:19888'
     $mapreduce_map_tasks_maximum              = undef
     $mapreduce_reduce_tasks_maximum           = undef
     $mapreduce_job_reuse_jvm_num_tasks        = undef
