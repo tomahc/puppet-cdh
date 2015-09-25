@@ -58,6 +58,7 @@ class cdh::hadoop::defaults {
     $yarn_scheduler_maximum_allocation_vcores = undef
 
     $fair_scheduler_template                  = 'cdh/hadoop/fair-scheduler.xml.erb'
+    $capacity_scheduler_template              = 'cdh/hadoop/capacity-scheduler.xml.erb'
     $yarn_site_extra_properties               = undef
     $hdfs_site_extra_properties               = undef
 
