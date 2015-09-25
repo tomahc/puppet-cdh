@@ -8,6 +8,13 @@
 <configuration>
 
   
+<% if @io_compression_codec_lzo_class -%>
+  <property>
+    <name>io.compression.codec.lzo.class</name>
+    <value><%= @io_compression_codec_lzo_class %></value>
+  </property>
+<% end -%>
+
 <% if @io_compression_codecs -%>
   <property>
     <name>io.compression.codecs</name>

@@ -143,6 +143,7 @@ class cdh::hadoop(
     $httpfs_enabled                              = $::cdh::hadoop::defaults::httpfs_enabled,
     $io_file_buffer_size                         = $::cdh::hadoop::defaults::io_file_buffer_size,
     $io_compression_codecs                       = undef,
+    $io_compression_codec_lzo_class              = undef,
     $mapreduce_system_dir                        = $::cdh::hadoop::defaults::mapreduce_system_dir,
     $mapreduce_map_tasks_maximum                 = $::cdh::hadoop::defaults::mapreduce_map_tasks_maximum,
     $mapreduce_reduce_tasks_maximum              = $::cdh::hadoop::defaults::mapreduce_reduce_tasks_maximum,
