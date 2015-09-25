@@ -7,6 +7,14 @@
 
 <configuration>
 
+  
+<% if @io_compression_codecs -%>
+  <property>
+    <name>io.compression.codecs</name>
+    <value><%= @io_compression_codecs.join(',') %></value>
+  </property>
+<% end -%>
+  
   <property>
     <name>fs.defaultFS</name>
     <value>hdfs://<%= @ha_enabled ? @nameservice_id : @primary_namenode_host %>/</value>
