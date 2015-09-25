@@ -54,6 +54,16 @@
     <name>hadoop.proxyuser.oozie.groups</name>
     <value>*</value>
   </property>
+
+  <!-- Hive proxy user -->
+  <property>
+    <name>hadoop.proxyuser.hive.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hive.groups</name>
+    <value>*</value>
+  </property>
 <% end -%>
 
 <% if @httpfs_enabled -%>
