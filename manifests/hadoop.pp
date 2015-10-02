@@ -181,6 +181,7 @@ class cdh::hadoop(
     $gelf_logging_host                           = $::cdh::hadoop::defaults::gelf_logging_host,
     $gelf_logging_port                           = $::cdh::hadoop::defaults::gelf_logging_port,
     $fair_scheduler_template                     = $::cdh::hadoop::defaults::fair_scheduler_template,
+    $capacity_scheduler_template                 = $::cdh::hadoop::defaults::capacity_scheduler_template,
     $yarn_site_extra_properties                  = $::cdh::hadoop::defaults::yarn_site_extra_properties,
     $hdfs_site_extra_properties                  = $::cdh::hadoop::defaults::hdfs_site_extra_properties,
 ) inherits cdh::hadoop::defaults
@@ -278,6 +279,12 @@ class cdh::hadoop(
     }
 
     $fair_scheduler_enabled = $fair_scheduler_template ? {
+        undef   => false,
+        false   => false,
+        default => true,
+    }
+
+    $capacity_scheduler_enabled = $capacity_scheduler_template ? {
         undef   => false,
         false   => false,
         default => true,
