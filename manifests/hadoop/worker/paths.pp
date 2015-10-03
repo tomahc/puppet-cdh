@@ -48,11 +48,8 @@ define cdh::hadoop::worker::paths($basedir = $title) {
         mode    => '0755',
     }
 
-    # Assume that $dfs_data_path is two levels.  e.g. hdfs/dn
-    # We need to manage the parent directory too.
-    $dfs_data_path_parent = inline_template("<%= File.dirname('${::cdh::hadoop::dfs_data_path}') %>")
-    # create DataNode directories
-    file { ["${basedir}/${dfs_data_path_parent}", "${basedir}/${::cdh::hadoop::dfs_data_path}"]:
+    $dirs = makedirs(${basedir}, ${::cdh::hadoop::dfs_data_path})
+    file { $dirs:
         ensure  => 'directory',
         owner   => 'hdfs',
         group   => 'hdfs',
