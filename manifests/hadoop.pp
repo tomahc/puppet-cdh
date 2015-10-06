@@ -284,16 +284,16 @@ class cdh::hadoop(
       'FairScheduler': {
         $fair_scheduler_enabled = true 
         $capacity_scheduler_enabled = false 
-      },
+      }
       'CapacityScheduler': {
         $fair_scheduler_enabled = false 
         $capacity_scheduler_enabled = true 
-      },
+      }
       # enable CapacityScheduler by default
       default: {
         $fair_scheduler_enabled = false 
         $capacity_scheduler_enabled = true 
-      },
+      }
     }
 
     $fair_scheduler_allocation_file_ensure = $fair_scheduler_enabled ? {
