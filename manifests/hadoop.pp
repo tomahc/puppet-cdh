@@ -185,6 +185,7 @@ class cdh::hadoop(
     $capacity_scheduler_template                 = $::cdh::hadoop::defaults::capacity_scheduler_template,
     $yarn_site_extra_properties                  = $::cdh::hadoop::defaults::yarn_site_extra_properties,
     $hdfs_site_extra_properties                  = $::cdh::hadoop::defaults::hdfs_site_extra_properties,
+    $capacity_scheduler_extra_properties         = $::cdh::hadoop::defaults::capacity_scheduler_extra_properties,
 ) inherits cdh::hadoop::defaults
 {
     # If $dfs_name_dir is a list, this will be the

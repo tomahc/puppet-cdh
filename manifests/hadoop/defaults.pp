@@ -62,6 +62,7 @@ class cdh::hadoop::defaults {
     $capacity_scheduler_template              = 'cdh/hadoop/capacity-scheduler.xml.erb'
     $yarn_site_extra_properties               = undef
     $hdfs_site_extra_properties               = undef
+    $capacity_scheduler_extra_properties      = undef
 
     $hadoop_heapsize                          = undef
     $hadoop_namenode_opts                     = undef
