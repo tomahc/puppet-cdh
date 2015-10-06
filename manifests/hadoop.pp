@@ -136,9 +136,9 @@ class cdh::hadoop(
 
     $resourcemanager_jmxremote_port              = $::cdh::hadoop::defaults::resourcemanager_jmxremote_port,
     $datanode_jmxremote_port                     = $::cdh::hadoop::defaults::datanode_jmxremote_port,
-    $namenode_jmxremote_port                     = $::cdh::hadoop::dafaults::namenode_jmxremote_port,
-    $proxyserver_jmxremote_port                  = $::cdh::hadoop::dafaults::proxyserver_jmxremote_port,
-    $nodemanager_jmxremote_port                  = $::cdh::hadoop::dafaults::nodemanager_jmxremote_port,
+    $namenode_jmxremote_port                     = $::cdh::hadoop::defaults::namenode_jmxremote_port,
+    $proxyserver_jmxremote_port                  = $::cdh::hadoop::defaults::proxyserver_jmxremote_port,
+    $nodemanager_jmxremote_port                  = $::cdh::hadoop::defaults::nodemanager_jmxremote_port,
 
     $yarn_local_path                             = $::cdh::hadoop::defaults::yarn_local_path,
     $yarn_logs_path                              = $::cdh::hadoop::defaults::yarn_logs_path,
