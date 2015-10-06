@@ -182,6 +182,7 @@ class cdh::hadoop(
     $gelf_logging_enabled                        = $::cdh::hadoop::defaults::gelf_logging_enabled,
     $gelf_logging_host                           = $::cdh::hadoop::defaults::gelf_logging_host,
     $gelf_logging_port                           = $::cdh::hadoop::defaults::gelf_logging_port,
+    $namenode_jmxremote_port                     = $::cdh::hadoop::dafaults::namenode_jmxremote_port,
     $fair_scheduler_template                     = $::cdh::hadoop::defaults::fair_scheduler_template,
     $capacity_scheduler_template                 = $::cdh::hadoop::defaults::capacity_scheduler_template,
     $yarn_site_extra_properties                  = $::cdh::hadoop::defaults::yarn_site_extra_properties,
