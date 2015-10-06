@@ -132,6 +132,7 @@ class cdh::hadoop(
     $datanode_failed_volumes_tolerated           = $::cdh::hadoop::defaults::datanode_failed_volumes_tolerated,
 
     $resourcemanager_hosts                       = $namenode_hosts,
+    $resourcemanager_jmxremote_port              = $cdh::hadoop::defaults::resourcemanager_jmxremote_port,
     $zookeeper_hosts                             = $::cdh::hadoop::defaults::zookeeper_hosts,
 
     $yarn_local_path                             = $::cdh::hadoop::defaults::yarn_local_path,
