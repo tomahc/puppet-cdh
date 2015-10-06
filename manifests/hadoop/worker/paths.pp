@@ -48,7 +48,6 @@ define cdh::hadoop::worker::paths($basedir = $title) {
         owner   => 'hdfs',
         group   => 'hdfs',
         mode    => '0700',
-        require => File[$basedir],
     }
 
     # create yarn local directories
