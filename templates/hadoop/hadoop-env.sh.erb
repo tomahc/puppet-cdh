@@ -2,6 +2,7 @@
 
 # Use YARN for all hadoop commands
 export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
+export HADOOP_CONF_DIR=/etc/hadoop/conf.<%= cluster_name %>/
 
 <% if @namenode_jmxremote_port -%>
 # Enable NameNode JMX connections on port <%= @namenode_jmxremote_port %>
