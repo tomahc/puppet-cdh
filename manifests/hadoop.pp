@@ -349,6 +349,9 @@ class cdh::hadoop(
         content => template('cdh/hadoop/yarn-env.sh.erb'),
     }
 
+    file { "${config_directory}/hadoop-policy.xml":
+        content => template('cdh/hadoop/hadoop-policy.xml.erb'),
+    }
 
     # Render hadoop-metrics2.properties
     # if we have Ganglia Hosts to send metrics to.
