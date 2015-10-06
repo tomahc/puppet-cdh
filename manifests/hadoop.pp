@@ -280,16 +280,20 @@ class cdh::hadoop(
         }
     }
 
-    $fair_scheduler_enabled = $fair_scheduler_template ? {
-        undef   => false,
-        false   => false,
-        default => true,
-    }
-
-    $capacity_scheduler_enabled = $capacity_scheduler_template ? {
-        undef   => false,
-        false   => false,
-        default => true,
+    case $yarn_resourcemanager_scheduler_class {
+      'FairScheduler': {
+        $fair_scheduler_enabled = true 
+        $capacity_scheduler_enabled = false 
+      },
+      'CapacityScheduler': {
+        $fair_scheduler_enabled = false 
+        $capacity_scheduler_enabled = true 
+      },
+      # enable CapacityScheduler by default
+      default: {
+        $fair_scheduler_enabled = false 
+        $capacity_scheduler_enabled = true 
+      },
     }
 
     $fair_scheduler_allocation_file_ensure = $fair_scheduler_enabled ? {
@@ -302,9 +306,6 @@ class cdh::hadoop(
         false => 'absent',
     }
 
-    # FairScheduler can be enabled
-    # and this file will be used to configure
-    # FairScheduler queues.
     file { "${config_directory}/fair-scheduler.xml":
         ensure  => $fair_scheduler_allocation_file_ensure,
         content => template($fair_scheduler_template),
