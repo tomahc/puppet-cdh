@@ -41,7 +41,8 @@ define cdh::hadoop::worker::paths($basedir = $title) {
     # installed by cdh::hadoop
 
     # make sure mounts and data strucutre exists
-    $dirs = makedirs(${basedir}, ${::cdh::hadoop::dfs_data_path})
+    $dfs_data_path = $::cdh::hadoop::dfs_data_path
+    $dirs = makedirs($basedir, $dfs_data_path)
     file { $dirs:
         ensure  => 'directory',
         owner   => 'hdfs',
