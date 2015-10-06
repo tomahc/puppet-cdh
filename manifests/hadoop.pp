@@ -164,6 +164,7 @@ class cdh::hadoop(
     $mapreduce_output_compression                = $::cdh::hadoop::defaults::mapreduce_output_compession,
     $mapreduce_output_compression_codec          = $::cdh::hadoop::defaults::mapreduce_output_compession_codec,
     $mapreduce_output_compression_type           = $::cdh::hadoop::defaults::mapreduce_output_compression_type,
+    $yarn_resourcemanager_scheduler_class        = $::cdh::hadoop::defaults::yarn_resourcemanager_scheduler_class,
     $yarn_nodemanager_resource_memory_mb         = $::cdh::hadoop::defaults::yarn_nodemanager_resource_memory_mb,
     $yarn_nodemanager_resource_cpu_vcores        = $::cdh::hadoop::defaults::yarn_nodemanager_resource_cpu_vcores,
     $yarn_scheduler_minimum_allocation_mb        = $::cdh::hadoop::defaults::yarn_scheduler_minimum_allocation_mb,
@@ -294,12 +295,23 @@ class cdh::hadoop(
         true  => 'present',
         false => 'absent',
     }
+
+    $capacity_scheduler_allocation_file_ensure = $capacity_scheduler_enabled ? {
+        true  => 'present',
+        false => 'absent',
+    }
+
     # FairScheduler can be enabled
     # and this file will be used to configure
     # FairScheduler queues.
     file { "${config_directory}/fair-scheduler.xml":
         ensure  => $fair_scheduler_allocation_file_ensure,
         content => template($fair_scheduler_template),
+    }
+
+    file { "${config_directory}/capacity-scheduler.xml":
+        ensure  => $capacity_scheduler_allocation_file_ensure,
+        content => template($capacity_scheduler_template),
     }
 
     file { "${config_directory}/log4j.properties":

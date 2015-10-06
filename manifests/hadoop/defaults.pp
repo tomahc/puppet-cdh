@@ -46,6 +46,7 @@ class cdh::hadoop::defaults {
     $mapreduce_output_compression_codec       = 'org.apache.hadoop.io.compress.DefaultCodec'
     $mapreduce_output_compression_type        = 'RECORD'
 
+    $yarn_resourcemanager_scheduler_class     = 'FairScheduler'
     $yarn_nodemanager_remote_app_log_dir      = '/var/log/hadoop-yarn/apps'
     $yarn_nodemanager_resource_memory_mb      = undef
     # Note:  Apparently puppet interprets a literal 1 as a String when it is on
