@@ -122,7 +122,9 @@
 class cdh::hadoop(
     $namenode_hosts,
     $dfs_name_dir,
-    $dfs_hosts_exclude                           = undef,
+    $dfs_hosts_exclude                           = $::cdh::hadoop::defaults::dfs_hosts_exclude,
+    $mapred_hosts_exclude                        = $::cdh::hadoop::defaults::mapred_hosts_exclude,
+    $yarn_hosts_exclude                          = $::cdh::hadoop::defaults::yarn_hosts_exclude,
     $cluster_name                                = $::cdh::hadoop::defaults::cluster_name,
     $journalnode_hosts                           = $::cdh::hadoop::defaults::journalnode_hosts,
     $dfs_journalnode_edits_dir                   = $::cdh::hadoop::defaults::dfs_journalnode_edits_dir,

@@ -6,6 +6,10 @@ class cdh::hadoop::defaults {
     $journalnode_hosts                        = undef
     $dfs_journalnode_edits_dir                = undef
 
+    $dfs_hosts_exclude                        = undef
+    $mapred_hosts_exclude                     = undef
+    $yarn_hosts_exclude                       = undef
+
     $datanode_mounts                          = undef
     $dfs_data_path                            = 'hdfs/dn'
     $datanode_failed_volumes_tolerated        = 0
