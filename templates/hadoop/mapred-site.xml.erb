@@ -134,6 +134,7 @@
   </property>
 <% end -%>
 
+<% if @intermediate_compression -%>
   <!-- MapReduce intermediate compression -->
   <property>
     <name>mapreduce.map.output.compress</name>
@@ -166,6 +167,7 @@
       This is useful for decommissioning nodes.
     </description>
   </property>
+<% end -%>
 
 <% if @gelf_logging_enabled -%>
   <property>

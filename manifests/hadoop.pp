@@ -142,6 +142,8 @@ class cdh::hadoop(
     $proxyserver_jmxremote_port                  = $::cdh::hadoop::defaults::proxyserver_jmxremote_port,
     $nodemanager_jmxremote_port                  = $::cdh::hadoop::defaults::nodemanager_jmxremote_port,
 
+    $intermediate_compression                    = $::cdh::hadoop::defaults::intermediate_compression,
+
     $yarn_local_path                             = $::cdh::hadoop::defaults::yarn_local_path,
     $yarn_logs_path                              = $::cdh::hadoop::defaults::yarn_logs_path,
     $dfs_block_size                              = $::cdh::hadoop::defaults::dfs_block_size,
