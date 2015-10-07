@@ -158,6 +158,7 @@
     <name>mapreduce.output.fileoutputformat.compress.type</name>
     <value><%= @mapreduce_output_compression_type %></value>
   </property>
+<% end -%>
 
   <property>
     <name>mapred.hosts.exclude</name>
@@ -167,7 +168,6 @@
       This is useful for decommissioning nodes.
     </description>
   </property>
-<% end -%>
 
 <% if @gelf_logging_enabled -%>
   <property>
