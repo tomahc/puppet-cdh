@@ -6,6 +6,13 @@
 <!-- Put site-specific property overrides in this file. -->
 <configuration>
 
+<% if @yarn_app_mapreduce_am_admin_user_env -%>
+  <property>
+    <name>yarn.app.mapreduce.am.admin.user.env</name>
+    <value>LD_LIBRARY_PATH=/usr/lib/hadoop/lib/native</value>
+  </property>
+<% end -%>
+
   <property>
       <name>yarn.app.mapreduce.am.staging-dir</name>
       <value>/user</value>
