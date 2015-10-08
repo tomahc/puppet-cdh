@@ -44,7 +44,7 @@ class cdh::hadoop::defaults {
     $mapreduce_reduce_java_opts               = undef
     $yarn_app_mapreduce_am_resource_mb        = undef
     $yarn_app_mapreduce_am_command_opts       = undef
-    yarn_app_mapreduce_am_admin_user_env      = false
+    $yarn_app_mapreduce_am_admin_user_env     = false
 
     $mapreduce_shuffle_port                   = undef
     $mapreduce_intermediate_compression       = false
