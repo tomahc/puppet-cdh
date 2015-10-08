@@ -162,7 +162,7 @@
 
   <property>
     <name>mapred.hosts.exclude</name>
-    <value><%= @mapred_hosts_exclude ||= @config_directory %>/mapred.exclude</value>
+    <value><%= @mapred_hosts_exclude ||= @config_directory + '/hosts.exclude' %></value>
     <description>
       A file that contains a list of mapreduce hosts to exclude.
       This is useful for decommissioning nodes.
