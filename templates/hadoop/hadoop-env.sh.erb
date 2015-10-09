@@ -49,5 +49,6 @@ HADOOP_NAMENODE_OPTS="<%= @hadoop_namenode_opts %> $HADOOP_NAMENODE_OPTS"
 
 <% if @hadoop_gc_opts -%>
 export HADOOP_GC_OPTS="-Xloggc:/var/log/hadoop-yarn/`date +%F_%H-%M-%S`-gc.log -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-PrintTenuringDistribution -XX:+PrintGCCause -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=2M"
+export HADOOP_GC_OPTS="-Xloggc:/var/log/hadoop-hdfs/`date +%F_%H-%M-%S`-gc.log -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-PrintTenuringDistribution -XX:+PrintGCCause -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=2M"
 <% end -%>
 
