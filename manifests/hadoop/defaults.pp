@@ -67,6 +67,7 @@ class cdh::hadoop::defaults {
 
     $fair_scheduler_template                  = 'cdh/hadoop/fair-scheduler.xml.erb'
     $capacity_scheduler_template              = 'cdh/hadoop/capacity-scheduler.xml.erb'
+    $core_site_extra_properties               = undef
     $yarn_site_extra_properties               = undef
     $hdfs_site_extra_properties               = undef
     $capacity_scheduler_extra_properties      = undef
