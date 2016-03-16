@@ -198,6 +198,7 @@ class cdh::hadoop(
     $core_site_extra_properties                  = $::cdh::hadoop::defaults::core_site_extra_properties,
     $yarn_site_extra_properties                  = $::cdh::hadoop::defaults::yarn_site_extra_properties,
     $hdfs_site_extra_properties                  = $::cdh::hadoop::defaults::hdfs_site_extra_properties,
+    $mapred_site_extra_properties                = $::cdh::hadoop::defaults::mapred_site_extra_properties,
     $capacity_scheduler_extra_properties         = $::cdh::hadoop::defaults::capacity_scheduler_extra_properties,
 ) inherits cdh::hadoop::defaults
 {

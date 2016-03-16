@@ -42,6 +42,7 @@ class cdh::hadoop::defaults {
     $mapreduce_task_io_sort_factor            = undef
     $mapreduce_map_java_opts                  = undef
     $mapreduce_reduce_java_opts               = undef
+    $mapred_site_extra_properties             = undef
     $yarn_app_mapreduce_am_resource_mb        = undef
     $yarn_app_mapreduce_am_command_opts       = undef
     $yarn_app_mapreduce_am_admin_user_env     = false
